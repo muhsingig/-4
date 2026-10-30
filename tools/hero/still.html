@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Helmet still render</title>
+  <!-- Renders the 3D head wearing the 3D helmet on a transparent background, for the
+       menu tile, On Brand and footer images. Open via the local server, wait for
+       window.stillReady, then read window.stillPNG (a data URL). -->
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }
+  </script>
+  <style>html, body { margin: 0; background: transparent; }</style>
+</head>
+<body>
+<script type="module">
+  import * as THREE from 'three';
+  import { loadHelmet } from '../../js/helmet.js';
+
+  const SIZE = 1400;
+  const params = new URLSearchParams(location.search);
+  const turn = parseFloat(params.get('turn') || '0');          // helmet yaw in radians
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
+  renderer.setSize(SIZE, SIZE);
+  renderer.setClearColor(0x000000, 0);
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  document.body.appendChild(renderer.domElement);
+
+  const load = (url, srgb) => new Promise((res) => new THREE.TextureLoader().load(url, (t) => {
+    t.flipY = false;
+    if (srgb) t.colorSpace = THREE.SRGBColorSpace;
+    res(t);
+  }));
+  const [map, depth] = await Promise.all([load('../../assets/img/head-diffuse.webp', false), load('../../assets/img/head-depth.webp', false)]);
+
+  const camera = new THREE.PerspectiveCamera(15, 1, 0.1, 100);
+  camera.position.set(0, -0.06, 3.6);
+
+  // the head, displaced like the hero's
+  const head = new THREE.Mesh(new THREE.PlaneGeometry(1, 1, 128, 128), new THREE.ShaderMaterial({
+    uniforms: { uMap: { value: map }, uDepth: { value: depth } },
+    vertexShader: `uniform sampler2D uDepth; varying vec2 vUv;
+      void main() { vUv = uv; vec3 p = position; p.z += texture2D(uDepth, vec2(uv.x, 1.0 - uv.y)).r * 0.25;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.0); }`,
+    fragmentShader: `uniform sampler2D uMap; varying vec2 vUv;
+      void main() { vec4 c = texture2D(uMap, vec2(vUv.x, 1.0 - vUv.y)); if (c.a < 0.02) discard;
+        gl_FragColor = vec4(c.rgb, c.a); }`,   // already sRGB; ShaderMaterial output is not converted
+    transparent: true,
+  }));
+  const headScene = new THREE.Scene();
+  headScene.add(head);
+
+  // the helmet, placed with the same numbers as the hero (HELMET_FIT in js/main.js)
+  const fit = { modelSx: 0.26, modelTop: 0.3422, modelStretch: 1.038, modelPitch: Math.PI * 0.06 };
+  const helmet = await loadHelmet(renderer, '../../assets/models/helmet.glb');
+  const helmetScene = new THREE.Scene();
+  helmetScene.environment = helmet.env;
+  const rig = new THREE.Group();
+  const place = new THREE.Group();
+  place.scale.set(fit.modelSx, fit.modelSx * fit.modelStretch, fit.modelSx);
+  place.position.set(0, fit.modelTop - fit.modelSx * fit.modelStretch, 0.27 - helmet.halfDepth * fit.modelSx);
+  place.add(helmet.group);
+  rig.add(place);
+  rig.rotation.set(fit.modelPitch, turn, 0);
+  helmetScene.add(rig, ...helmet.lights);
+
+  renderer.autoClear = false;
+  renderer.clear();
+  renderer.render(headScene, camera);
+  renderer.clearDepth();
+  renderer.render(helmetScene, camera);
+  window.stillPNG = renderer.domElement.toDataURL('image/png');
+  window.stillReady = true;
+</script>
+</body>
+</html>

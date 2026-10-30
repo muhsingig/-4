@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Muhsin Gigani — Digital Strategy · Marketing + Vibe Coding</title>
+  <meta name="description" content="Muhsin Gigani is a Mumbai digital strategy student who turns brand strategy into live, shipped work: social for real brands and websites built with AI.">
+  <meta name="theme-color" content="#d2ff00">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Kaushan+Script&family=Mona+Sans:wdth,wght@75..125,200..900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/hero-muhsin.webp">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }
+  </script>
+</head>
+<body class="is-loading">
+
+  <!-- SVG symbols reused across the page -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="mg" viewBox="0 0 56 32">
+        <g transform="skewX(-12) translate(6 0)">
+          <path d="M0 32V0h7.4l5.6 13.2L18.6 0H26v32h-6.6V14.6l-4.6 10.6h-3.6L6.6 14.6V32z"/>
+          <path d="M29 0h21v7.2H35.6v17.6h7.6v-5.4h-4v-6.6H50V32H29z"/>
+        </g>
+      </symbol>
+      <symbol id="arrow" viewBox="0 0 16 16">
+        <path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+      </symbol>
+      <symbol id="doc" viewBox="0 0 16 16">
+        <path d="M3.5 1.5h6l3 3v10h-9z M9.5 1.5v3h3 M5.5 8h5 M5.5 10.5h5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      </symbol>
+      <symbol id="sig" viewBox="0 0 600 300">
+        <path class="sig-path" d="M34 252C150 196 360 92 522 46c46-13 66 14 34 40-58 48-230 104-392 146-52 13-96 22-102 8-6-15 46-34 104-50"/>
+        <path class="sig-path" d="M196 200l22-92 14 86 30-98 10 92 28-80 6 74c10-30 26-44 40-34 12 9 2 32-14 28-12-3-8-20 6-26l26 66 18-88-6 92c14-36 32-52 46-40 10 10 2 30-12 30"/>
+        <path class="sig-path" d="M108 286L482 158"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Loader: lime curtain with the monogram, like the original's "LOAD NORRIS" -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader-mark"><svg><use href="#mg"/></svg></div>
+    <div class="loader-label">Load Muhsin <span class="loader-count" hidden>0</span></div>
+  </div>
+
+  <div class="bg-layer" aria-hidden="true"><canvas class="gl"></canvas></div>
+
+  <!-- Navigation -->
+  <header class="nav" data-nav-theme="dark">
+    <a class="nav-brand" href="#home" aria-label="Muhsin Gigani, home">
+      <span class="nav-brand-top">Muhsin</span>
+      <span class="nav-brand-bottom">Gigani</span>
+    </a>
+    <a class="nav-middle" href="#home" aria-label="Back to top"><svg><use href="#mg"/></svg></a>
+    <div class="nav-actions">
+      <a class="btn-nav" href="assets/muhsin-gigani-resume.pdf" target="_blank" rel="noopener">
+        <svg class="btn-ico"><use href="#doc"/></svg><span>Résumé</span>
+      </a>
+      <button class="nav-ham" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        <span class="ham-line l1"></span><span class="ham-line l2"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="scroll-indicator" aria-hidden="true"><div class="scroll-indicator-bar"></div></div>
+
+  <!-- Menu overlay -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <div class="menu-tiles">
+      <div class="menu-tile" data-tile="0"><img src="assets/img/helmet-on.webp" alt=""></div>
+      <div class="menu-tile" data-tile="1"><img src="assets/img/muhsin-kurta.webp" alt=""></div>
+      <div class="menu-tile" data-tile="2"><img src="assets/img/nmacc-immersive.webp" alt=""></div>
+      <div class="menu-tile" data-tile="3"><img src="assets/img/nacar-night.webp" alt=""></div>
+    </div>
+    <nav class="menu-right" aria-label="Primary">
+      <ul class="menu-links">
+        <li><a href="#home" data-tile="0" class="is-current">Home</a></li>
+        <li><a href="#work" data-tile="1">Work</a></li>
+        <li><a href="#about" data-tile="2">About</a></li>
+        <li><a href="#contact" data-tile="3">Contact</a></li>
+      </ul>
+      <div class="menu-badge">
+        <svg><use href="#mg"/></svg>
+        <span class="text-eyebrow">Digital strategy since 2024</span>
+      </div>
+      <div class="menu-bottom">
+        <a class="text-eyebrow menu-enquiries" href="mailto:mdmuhsingigani9@gmail.com">Get in touch</a>
+        <div class="menu-socials">
+          <a class="text-eyebrow" href="https://www.linkedin.com/in/muhsin-gigani" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="text-eyebrow" href="https://github.com/muhsingig" target="_blank" rel="noopener">GitHub</a>
+          <a class="text-eyebrow" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener">Portfolio</a>
+          <a class="text-eyebrow" href="mailto:mdmuhsingigani9@gmail.com">Email</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <main class="page">
+
+    <!-- 1. HERO: photo with cursor helmet reveal, morphs into the "message" card -->
+    <div class="sticky-track hero-track" id="home" data-theme="cream">
+      <div class="sticky-item">
+        <section class="hero">
+          <h1 class="sr-only">Muhsin Gigani: digital strategy student, marketing and vibe coding, Mumbai</h1>
+
+          <div class="hero-msg" aria-hidden="true">
+            <div class="hero-msg-top">
+              <svg class="hero-msg-mark"><use href="#mg"/></svg>
+              <span class="text-eyebrow">Message from Muhsin</span>
+            </div>
+            <div class="mq-row mq-serif"><div class="mq-inner">
+              <span>Every plan deserves a launch date&nbsp;—&nbsp;</span><span>Every plan deserves a launch date&nbsp;—&nbsp;</span><span>Every plan deserves a launch date&nbsp;—&nbsp;</span>
+            </div></div>
+            <div class="mq-row mq-sans"><div class="mq-inner">
+              <span>From brand deck to live website, I ship it&nbsp;—&nbsp;</span><span>From brand deck to live website, I ship it&nbsp;—&nbsp;</span><span>From brand deck to live website, I ship it&nbsp;—&nbsp;</span>
+            </div></div>
+          </div>
+
+          <img class="hero-fallback" src="assets/img/hero-muhsin.webp" alt="Portrait of Muhsin Gigani">
+          <div class="hero-target" aria-hidden="true"></div>
+
+          <svg class="hero-sig" viewBox="0 0 600 300" aria-hidden="true"><use href="#sig"/></svg>
+
+          <a class="hero-card" href="#about" aria-label="Based in Mumbai, digital strategy since 2024">
+            <svg class="hero-card-outline" viewBox="0 0 71 145" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M.5 6.5a6 6 0 0 1 6-6h58a6 6 0 0 1 6 6v132a6 6 0 0 1-6 6h-58a6 6 0 0 1-6-6z" fill="none" stroke="currentColor"/>
+            </svg>
+            <span class="text-eyebrow hero-card-label">Based in</span>
+            <svg class="hero-card-map" viewBox="0 0 60 30" aria-hidden="true">
+              <path d="M18 3c3 2 2 6 5 8s7 1 8 5-3 6-1 9 7 1 9 2M18 3c-2 4-6 6-6 10s4 6 3 9-6 3-7 5" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              <circle cx="31" cy="16" r="2" fill="currentColor"/>
+            </svg>
+            <span class="text-eyebrow hero-card-place">Mumbai, IN</span>
+            <span class="hero-card-line"></span>
+            <svg class="hero-card-mark" aria-hidden="true"><use href="#mg"/></svg>
+            <span class="text-eyebrow hero-card-since">Digital strategy<br>since 2024</span>
+          </a>
+        </section>
+      </div>
+    </div>
+
+    <!-- 2. IMPACT statement -->
+    <section class="s impact" id="about" data-theme="dark">
+      <div class="impact-icon">
+        <svg><use href="#mg"/></svg>
+        <span class="text-eyebrow" data-hl>Digital strategy since 2024</span>
+      </div>
+      <h2 class="text-impact" data-lines>
+        <em>Strategy</em> that ships. Running social for real <em>brands</em>, building live websites with AI, and bringing it all in on <em>deadline</em>.
+      </h2>
+    </section>
+
+    <!-- 3. HORIZONTAL gallery -->
+    <section class="hscroll" data-theme="dark">
+      <div class="hs-sticky">
+        <div class="hs-track">
+          <!-- positions copied from the original grid, in vh-based units (--u) -->
+          <div class="hs-col" style="--cw:44">
+            <figure class="hs-item" style="--w:27;--h:33.6;--t:0"><figcaption class="text-eyebrow">Night ride, 2026</figcaption><div class="hs-img"><img src="assets/img/life-z800.webp" alt="Green Kawasaki Z800 parked at night" loading="lazy"></div></figure>
+            <figure class="hs-item" style="--w:29.3;--h:29.4;--t:49.9;--x:14.5"><figcaption class="text-eyebrow">Golden hour, 2026</figcaption><div class="hs-img"><img src="assets/img/life-sunset.webp" alt="Orange sunset over the city skyline" loading="lazy"></div></figure>
+          </div>
+          <div class="hs-spacer"></div>
+          <div class="hs-col" style="--cw:65.5">
+            <div class="hs-callout" style="--w:24;--t:1.7">
+              <p>Strategy only counts once it <b data-hl>ships</b>. Everything else is <b>a deck</b>.</p>
+              <svg class="callout-sig" viewBox="0 0 600 300" aria-hidden="true"><use href="#sig"/></svg>
+            </div>
+            <figure class="hs-item" style="--w:65.5;--h:59.6;--t:28.1"><figcaption class="text-eyebrow">Second Nature, NMACC 2026</figcaption><div class="hs-img"><img src="assets/img/nmacc-hall.webp" alt="Visitors inside a white installation room at NMACC" loading="lazy"></div></figure>
+          </div>
+          <div class="hs-spacer"></div>
+          <div class="hs-col" style="--cw:31.8">
+            <figure class="hs-item" style="--w:22;--h:21.1;--t:0;--x:-15.8"><figcaption class="text-eyebrow">After hours, 2026</figcaption><div class="hs-img"><img src="assets/img/life-bike.webp" alt="Motorbike on an empty road at night" loading="lazy"></div></figure>
+            <figure class="hs-item" style="--w:31.8;--h:34.9;--t:44.7"><figcaption class="text-eyebrow">Off the grid, 2026</figcaption><div class="hs-img"><img src="assets/img/life-horse.webp" alt="Black and white photo of two people walking with a horse" loading="lazy"></div></figure>
+          </div>
+          <div class="hs-spacer is-half"></div>
+          <div class="hs-col" style="--cw:21.4">
+            <figure class="hs-item" style="--w:21.4;--h:26.6;--t:59.9"><figcaption class="text-eyebrow">Low tide, 2026</figcaption><div class="hs-img"><img src="assets/img/life-sea.webp" alt="Clouds over the sea at dusk" loading="lazy"></div></figure>
+          </div>
+          <div class="hs-col" style="--cw:20.7">
+            <figure class="hs-item" style="--w:20.7;--h:20.8;--t:7.9"><figcaption class="text-eyebrow">Monsoon nights, 2026</figcaption><div class="hs-img"><img src="assets/img/life-palm.webp" alt="Palm tree against a cloudy night sky" loading="lazy"></div></figure>
+          </div>
+          <div class="hs-spacer is-half"></div>
+          <div class="hs-col" style="--cw:61">
+            <figure class="hs-item" style="--w:61;--h:61.1;--t:2"><figcaption class="text-eyebrow">NMACC field study, 2026</figcaption><div class="hs-img"><img src="assets/img/nmacc-immersive.webp" alt="Immersive projection room at NMACC" loading="lazy"></div></figure>
+            <div class="hs-callout is-2" style="--w:40;--t:72">
+              <p>Since leading <b>25 people</b> through a 1,000-person festival, I want every plan I write to <b data-hl>survive the real day</b>.</p>
+              <svg class="callout-sig" viewBox="0 0 600 300" aria-hidden="true"><use href="#sig"/></svg>
+            </div>
+          </div>
+          <div class="hs-spacer"></div>
+          <div class="hs-col" style="--cw:31.6">
+            <figure class="hs-item" style="--w:31.6;--h:31;--t:15"><figcaption class="text-eyebrow">Off duty, 2026</figcaption><div class="hs-img"><img src="assets/img/muhsin-kurta.webp" alt="Muhsin in a blue kurta, smiling with a thumbs up" loading="lazy"></div></figure>
+            <figure class="hs-item" style="--w:27.5;--h:25;--t:59.6;--x:-15.8"><figcaption class="text-eyebrow">Aura Coffee, 2025</figcaption><div class="hs-img"><img src="assets/img/aura-coffee.webp" alt="Caramel iced coffee from the Aura Coffee site" loading="lazy"></div></figure>
+          </div>
+          <div class="hs-spacer is-half"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ON BRAND / OFF SCRIPT -->
+    <div class="sticky-track otot-track" id="work" data-theme="cream">
+      <div class="sticky-item otot">
+        <div class="otot-side is-left"><img src="assets/img/helmet-on.webp" alt="" aria-hidden="true"></div>
+        <div class="otot-side is-right"><img src="assets/img/hero-muhsin.webp" alt="" aria-hidden="true"></div>
+        <div class="otot-links">
+          <a class="otot-link" href="#projects">
+            <span class="otot-script" aria-hidden="true">on</span>
+            <h2 class="otot-title"><span class="t-brier">On</span><span class="t-mona">Brand</span></h2>
+            <p class="text-body">Campaigns, media plans and social strategy for real brands.</p>
+            <span class="btn-sq" aria-hidden="true"><svg><use href="#arrow"/></svg></span>
+          </a>
+          <a class="otot-link" href="#projects">
+            <h2 class="otot-title"><span class="t-brier">Off</span><span class="t-mona">Script</span></h2>
+            <p class="text-body">Websites, apps and AI agents, built with Claude Code and shipped live.</p>
+            <span class="btn-sq" aria-hidden="true"><svg><use href="#arrow"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="s-group bg-black">
+      <div class="big-reveal" data-theme="black">
+        <div class="big-reveal-inner"><img src="assets/img/nacar-family.webp" alt="Nácar product family: watch, phone and earbuds" loading="lazy"></div>
+      </div>
+
+      <!-- 5. PROJECTS hall of fame -->
+      <section class="s projects" id="projects" data-theme="black">
+        <div class="projects-head">
+          <h2 class="title-lg"><span class="t-mona">Projects</span><span class="t-brier c-lime-off">Hall of fame</span></h2>
+          <p class="text-body">From Apple-style launch sites to zero-spend content plans, every one of these went out the door, shipped and live.</p>
+        </div>
+        <div class="proj-grid">
+          <a class="proj-card" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener"><div class="proj-img"><img src="assets/img/nacar-pulso.webp" alt="" loading="lazy"></div><h3 class="proj-label">Nácar <span>2026</span></h3><p class="proj-tag">Launch site · Claude Code</p></a>
+          <a class="proj-card" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener"><div class="proj-img"><img src="assets/img/nmacc-tile.webp" alt="" loading="lazy"></div><h3 class="proj-label">Second Nature <span>2026</span></h3><p class="proj-tag">Walk-through site · Next.js</p></a>
+          <a class="proj-card" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener"><div class="proj-img is-ball"><div class="ball" aria-hidden="true"></div></div><h3 class="proj-label">World Cup 26 <span>2026</span></h3><p class="proj-tag">48 teams · 3D match ball</p></a>
+          <a class="proj-card" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener"><div class="proj-img"><img src="assets/img/aura-coffee.webp" alt="" loading="lazy"></div><h3 class="proj-label">Aura Coffee <span>2025</span></h3><p class="proj-tag">E-commerce · Firebase</p></a>
+          <a class="proj-card" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener"><div class="proj-img is-cover"><img src="assets/img/civiclens.webp" alt="" loading="lazy"></div><h3 class="proj-label">CivicLens <span>2026</span></h3><p class="proj-tag">4 AI agents · Make</p></a>
+          <a class="proj-card" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener"><div class="proj-img is-cal"><div class="cal" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><h3 class="proj-label">DayFlow <span>2026</span></h3><p class="proj-tag">Planner app · React</p></a>
+          <a class="proj-card" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener"><div class="proj-img is-word"><span class="word-croc">Croc<br>It</span></div><h3 class="proj-label">CROC IT <span>2025</span></h3><p class="proj-tag">₹1.25 Cr media plan</p></a>
+          <a class="proj-card" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener"><div class="proj-img is-cover"><img src="assets/img/gillette.webp" alt="" loading="lazy"></div><h3 class="proj-label">Gillette Rebrand <span>2025</span></h3><p class="proj-tag">Brand identity</p></a>
+          <a class="proj-card" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener"><div class="proj-img is-cover"><img src="assets/img/soezi-social.webp" alt="" loading="lazy"></div><h3 class="proj-label">Soezi Social <span>2025</span></h3><p class="proj-tag">Content strategy</p></a>
+          <a class="proj-card" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener"><div class="proj-img is-cover"><img src="assets/img/soezi-seo.webp" alt="" loading="lazy"></div><h3 class="proj-label">Soezi SEO <span>2025</span></h3><p class="proj-tag">DA 15 → 35+</p></a>
+          <a class="proj-card" href="#experience"><div class="proj-img is-cover"><img src="assets/img/pluro-post.webp" alt="" loading="lazy"></div><h3 class="proj-label">Pluro Social <span>2026</span></h3><p class="proj-tag">6 accounts · Django</p></a>
+          <a class="proj-card" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener"><div class="proj-img is-cover"><img src="assets/img/nacar-onda.webp" alt="" loading="lazy"></div><h3 class="proj-label">Onda <span>2026</span></h3><p class="proj-tag">Nácar earbuds · Nano Banana</p></a>
+        </div>
+        <div class="projects-cta">
+          <svg class="cta-mark"><use href="#mg"/></svg>
+          <p>See the case studies behind each build on my portfolio</p>
+          <span class="cta-block" aria-hidden="true"></span>
+          <a class="btn-lime" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener"><span>View portfolio</span><svg><use href="#arrow"/></svg></a>
+        </div>
+      </section>
+    </div>
+
+    <!-- 6. EXPERIENCE (the original's store block) -->
+    <section class="s experience" id="experience" data-theme="cream">
+      <div class="exp-copy">
+        <div class="exp-eyebrow"><svg class="btn-ico"><use href="#doc"/></svg><span class="text-eyebrow">Django · Solutions strategist</span></div>
+        <h2 class="text-impact-md"><span class="t-mona">100+ clinics,</span><span class="t-mona">six accounts,</span><span class="t-brier">one intern</span></h2>
+        <span class="exp-bar" aria-hidden="true"></span>
+        <p class="text-body">At Django, a Mumbai digital agency, I ran day-to-day social for Pluro, a fertility care platform scaling to 100+ clinics: calendars, creative direction, copy, scheduling, and the monthly dashboards that set next month's plan.</p>
+        <a class="btn-lime" href="assets/muhsin-gigani-resume.pdf" target="_blank" rel="noopener"><span>Read the résumé</span><svg><use href="#arrow"/></svg></a>
+      </div>
+      <div class="exp-visuals">
+        <figure class="exp-main" data-speed="0.06"><img src="assets/img/pluro-post.webp" alt="A Pluro Instagram post about fertility checks" loading="lazy"></figure>
+        <div class="exp-card is-gold" data-speed="-0.1"><span class="exp-card-script">Six accounts</span><span class="text-eyebrow">Instagram · LinkedIn · Facebook · YouTube</span></div>
+        <div class="exp-card is-stat" data-speed="0.14"><b>25</b><span class="text-eyebrow">Member team, Talaash fest</span></div>
+        <div class="exp-card is-stat is-dark" data-speed="-0.04"><b>8</b><span class="text-eyebrow">Sponsors closed, Digital Nexus</span></div>
+        <div class="exp-sticker" data-speed="0.2">100+</div>
+      </div>
+    </section>
+
+    <!-- 7. BRANDS & CAMPAIGNS -->
+    <section class="s brands" data-theme="cream">
+      <div class="brands-head">
+        <h2 class="title-lg"><span class="t-mona">Brands</span><span class="t-brier">&amp;Campaigns</span></h2>
+        <p class="text-body">Agencies, clients, festivals and sponsors: the teams I've planned, posted and pitched for.</p>
+      </div>
+      <div class="brands-row">
+        <span class="brands-script" aria-hidden="true">Clients</span>
+        <div class="brands-marquee"><div class="brands-inner">
+          <span class="wm wm-1">Pluro</span><span class="wm wm-2">DJANGO</span><span class="wm wm-3">Toy Kingdom</span><span class="wm wm-4">TALAASH</span><span class="wm wm-5">Digital Nexus</span><span class="wm wm-6">rio</span><span class="wm wm-7">MEXIBAY</span><span class="wm wm-8">Jai Hind College</span>
+          <span class="wm wm-1" aria-hidden="true">Pluro</span><span class="wm wm-2" aria-hidden="true">DJANGO</span><span class="wm wm-3" aria-hidden="true">Toy Kingdom</span><span class="wm wm-4" aria-hidden="true">TALAASH</span><span class="wm wm-5" aria-hidden="true">Digital Nexus</span><span class="wm wm-6" aria-hidden="true">rio</span><span class="wm wm-7" aria-hidden="true">MEXIBAY</span><span class="wm wm-8" aria-hidden="true">Jai Hind College</span>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- 8. SOCIALS -->
+    <section class="s socials" id="contact" data-theme="cream">
+      <svg class="socials-mark" aria-hidden="true"><use href="#mg"/></svg>
+      <h2 class="title-lg is-center"><span class="t-mona">What's up</span><span class="t-brier">On socials</span></h2>
+      <div class="fan" aria-hidden="true">
+        <div class="fan-card"><img src="assets/img/life-sunset.webp" alt="" loading="lazy"></div>
+        <div class="fan-card"><img src="assets/img/nacar-night.webp" alt="" loading="lazy"></div>
+        <div class="fan-card"><img src="assets/img/muhsin-kurta.webp" alt="" loading="lazy"></div>
+        <div class="fan-card"><img src="assets/img/intro-poster.webp" alt="" loading="lazy"></div>
+        <div class="fan-card"><img src="assets/img/life-z800.webp" alt="" loading="lazy"></div>
+        <div class="fan-card"><img src="assets/img/nmacc-gallery.webp" alt="" loading="lazy"></div>
+        <div class="fan-card"><img src="assets/img/aura-site.webp" alt="" loading="lazy"></div>
+      </div>
+      <p class="socials-follow">Find Muhsin online</p>
+      <div class="socials-links">
+        <a class="text-link" href="https://www.linkedin.com/in/muhsin-gigani" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="text-link" href="https://github.com/muhsingig" target="_blank" rel="noopener">GitHub</a>
+        <a class="text-link" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener">Portfolio</a>
+        <a class="text-link" href="mailto:mdmuhsingigani9@gmail.com">Email</a>
+      </div>
+    </section>
+
+    <!-- 9. FOOTER -->
+    <footer class="s footer" data-theme="lime">
+      <div class="footer-panel">
+        <svg class="footer-notch" viewBox="0 0 1000 60" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 60V24a24 24 0 0 1 24-24h276c18 0 26 10 34 22 8 12 18 18 34 18h264c16 0 26-6 34-18 8-12 16-22 34-22h276a24 24 0 0 1 24 24v36z"/>
+        </svg>
+        <div class="footer-inner">
+          <svg class="footer-sig" viewBox="0 0 600 300" aria-hidden="true"><use href="#sig"/></svg>
+          <h2 class="footer-title"><span><span class="t-mona">Always</span> <span class="t-brier">shipping</span></span><span><span class="t-mona">the</span> <span class="t-brier">plan.</span></span></h2>
+          <div class="footer-cols">
+            <div class="footer-col">
+              <span class="text-eyebrow">Pages</span>
+              <a href="#home">Home</a><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a>
+              <a class="c-lime" href="assets/muhsin-gigani-resume.pdf" target="_blank" rel="noopener">Résumé</a>
+            </div>
+            <div class="footer-figure"><img src="assets/img/helmet-on.webp" alt="" loading="lazy"></div>
+            <div class="footer-col is-right">
+              <span class="text-eyebrow">Find me on</span>
+              <a href="https://www.linkedin.com/in/muhsin-gigani" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://github.com/muhsingig" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener">Portfolio</a>
+              <a href="mailto:mdmuhsingigani9@gmail.com">Email</a>
+            </div>
+          </div>
+          <div class="footer-brands">
+            <span class="wm wm-1">Pluro</span><span class="wm wm-2">DJANGO</span><span class="wm wm-3">Toy Kingdom</span><span class="wm wm-4">TALAASH</span>
+            <a class="btn-lime is-small" href="mailto:mdmuhsingigani9@gmail.com"><span>Get in touch</span><svg><use href="#arrow"/></svg></a>
+            <span class="wm wm-5">Digital Nexus</span><span class="wm wm-6">rio</span><span class="wm wm-7">MEXIBAY</span><span class="wm wm-8">Jai Hind</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <span>© 2026 Muhsin Gigani. All rights reserved</span>
+        <span class="footer-credit">Helmet model: <a href="https://sketchfab.com/3d-models/f1-helmet-zhouguanyu-24-1124fa1f754645d7b9d54de84009d463" target="_blank" rel="noopener">“F1 Helmet” by Miopass</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>, re-skinned</span>
+        <span>Mumbai, India</span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
