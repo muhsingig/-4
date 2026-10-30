@@ -2,3 +2,6 @@
 node_modules/
 *.log
 preview/
+
+.vercel
+.vercel
