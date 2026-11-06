@@ -396,14 +396,27 @@ function buildScenes() {
     y: 60, opacity: 0, duration: 1.1, ease: 'expo.out', stagger: 0.1,
     scrollTrigger: { trigger: '.projects-head', start: 'top 80%', once: true },
   });
-  gsap.set('.proj-card', { opacity: 0 });
+  gsap.from('.proj-filter button', {
+    y: 20, opacity: 0, duration: 0.9, ease: 'expo.out', stagger: 0.06,
+    scrollTrigger: { trigger: '.proj-filter', start: 'top 88%', once: true },
+  });
+  gsap.set('.proj-card', { opacity: 0, y: 60 });
   ScrollTrigger.batch('.proj-card', {
     start: 'top 92%', once: true,
-    onEnter: (batch) => {
-      gsap.to(batch, { opacity: 1, duration: 0.8, stagger: 0.08 });
-      gsap.from(batch.map((c) => [...c.children]).flat(), { y: 50, opacity: 0, duration: 1.1, ease: 'expo.out', stagger: 0.04 });
-    },
+    onEnter: (batch) => gsap.to(batch, { opacity: 1, y: 0, duration: 1.1, ease: 'expo.out', stagger: 0.08, clearProps: 'transform' }),
   });
+
+  // filter tabs: show one category, re-flow the grid, fade the cards back in
+  const filterBtns = [...document.querySelectorAll('.proj-filter button')];
+  const projCards = [...document.querySelectorAll('.proj-card')];
+  filterBtns.forEach((btn) => btn.addEventListener('click', () => {
+    const f = btn.dataset.filter;
+    filterBtns.forEach((b) => { const on = b === btn; b.classList.toggle('is-on', on); b.setAttribute('aria-selected', on); });
+    projCards.forEach((c) => c.classList.toggle('is-hidden', f !== 'all' && c.dataset.cat !== f));
+    const shown = projCards.filter((c) => !c.classList.contains('is-hidden'));
+    gsap.fromTo(shown, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: 'expo.out', stagger: 0.05, clearProps: 'transform' });
+    ScrollTrigger.refresh();
+  }));
   gsap.from('.projects-cta > *', {
     y: 30, opacity: 0, duration: 1, ease: 'expo.out', stagger: 0.08,
     scrollTrigger: { trigger: '.projects-cta', start: 'top 85%', once: true },

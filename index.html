@@ -233,19 +233,117 @@
           <h2 class="title-lg"><span class="t-mona">Projects</span><span class="t-brier c-lime-off">Hall of fame</span></h2>
           <p class="text-body">From Apple-style launch sites to zero-spend content plans, every one of these went out the door, shipped and live.</p>
         </div>
+        <div class="proj-filter" role="tablist" aria-label="Filter projects">
+          <button class="is-on" data-filter="all" role="tab" aria-selected="true">All <sup>11</sup></button>
+          <button data-filter="web" role="tab" aria-selected="false">Web &amp; AI builds <sup>06</sup></button>
+          <button data-filter="brand" role="tab" aria-selected="false">Brand &amp; strategy <sup>05</sup></button>
+        </div>
         <div class="proj-grid">
-          <a class="proj-card" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener"><div class="proj-img"><img src="assets/img/nacar-pulso.webp" alt="" loading="lazy"></div><h3 class="proj-label">Nácar <span>2026</span></h3><p class="proj-tag">Launch site · Claude Code</p></a>
-          <a class="proj-card" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener"><div class="proj-img"><img src="assets/img/nmacc-tile.webp" alt="" loading="lazy"></div><h3 class="proj-label">Second Nature <span>2026</span></h3><p class="proj-tag">Walk-through site · Next.js</p></a>
-          <a class="proj-card" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener"><div class="proj-img is-ball"><div class="ball" aria-hidden="true"></div></div><h3 class="proj-label">World Cup 26 <span>2026</span></h3><p class="proj-tag">48 teams · 3D match ball</p></a>
-          <a class="proj-card" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener"><div class="proj-img"><img src="assets/img/aura-coffee.webp" alt="" loading="lazy"></div><h3 class="proj-label">Aura Coffee <span>2025</span></h3><p class="proj-tag">E-commerce · Firebase</p></a>
-          <a class="proj-card" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener"><div class="proj-img is-cover"><img src="assets/img/civiclens.webp" alt="" loading="lazy"></div><h3 class="proj-label">CivicLens <span>2026</span></h3><p class="proj-tag">4 AI agents · Make</p></a>
-          <a class="proj-card" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener"><div class="proj-img is-cal"><div class="cal" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><h3 class="proj-label">DayFlow <span>2026</span></h3><p class="proj-tag">Planner app · React</p></a>
-          <a class="proj-card" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener"><div class="proj-img is-word"><span class="word-croc">Croc<br>It</span></div><h3 class="proj-label">CROC IT <span>2025</span></h3><p class="proj-tag">₹1.25 Cr media plan</p></a>
-          <a class="proj-card" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener"><div class="proj-img is-cover"><img src="assets/img/gillette.webp" alt="" loading="lazy"></div><h3 class="proj-label">Gillette Rebrand <span>2025</span></h3><p class="proj-tag">Brand identity</p></a>
-          <a class="proj-card" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener"><div class="proj-img is-cover"><img src="assets/img/soezi-social.webp" alt="" loading="lazy"></div><h3 class="proj-label">Soezi Social <span>2025</span></h3><p class="proj-tag">Content strategy</p></a>
-          <a class="proj-card" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener"><div class="proj-img is-cover"><img src="assets/img/soezi-seo.webp" alt="" loading="lazy"></div><h3 class="proj-label">Soezi SEO <span>2025</span></h3><p class="proj-tag">DA 15 → 35+</p></a>
-          <a class="proj-card" href="#experience"><div class="proj-img is-cover"><img src="assets/img/pluro-post.webp" alt="" loading="lazy"></div><h3 class="proj-label">Pluro Social <span>2026</span></h3><p class="proj-tag">6 accounts · Django</p></a>
-          <a class="proj-card" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener"><div class="proj-img is-cover"><img src="assets/img/nacar-onda.webp" alt="" loading="lazy"></div><h3 class="proj-label">Onda <span>2026</span></h3><p class="proj-tag">Nácar earbuds · Nano Banana</p></a>
+          <a class="proj-card is-feature" data-cat="web" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener">
+            <div class="proj-media"><img src="assets/img/nacar-family.webp" alt="Nácar product family" loading="lazy"><span class="proj-chip">Web &amp; AI</span></div>
+            <div class="proj-meta">
+              <span class="proj-num">01</span>
+              <div class="proj-text"><h3 class="proj-label">Nácar <span>2026</span></h3><p class="proj-tag">Apple-style launch site for a fictional luxury tech brand, built in three days.</p></div>
+              <svg class="proj-arrow" aria-hidden="true"><use href="#arrow"/></svg>
+            </div>
+            <ul class="proj-tools"><li>Claude Code</li><li>Nano Banana</li><li>Vercel</li></ul>
+          </a>
+          <a class="proj-card" data-cat="web" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener">
+            <div class="proj-media"><img src="assets/img/nmacc-tile.webp" alt="" loading="lazy"><span class="proj-chip">Web &amp; AI</span></div>
+            <div class="proj-meta">
+              <span class="proj-num">02</span>
+              <div class="proj-text"><h3 class="proj-label">Second Nature <span>2026</span></h3><p class="proj-tag">NMACC field study rebuilt as a walk-through website in 12 hours.</p></div>
+              <svg class="proj-arrow" aria-hidden="true"><use href="#arrow"/></svg>
+            </div>
+            <ul class="proj-tools"><li>Next.js</li><li>Claude Code</li></ul>
+          </a>
+          <a class="proj-card is-drawn" data-cat="web" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener">
+            <div class="proj-media"><div class="ball" aria-hidden="true"></div><span class="proj-chip">Web &amp; AI</span></div>
+            <div class="proj-meta">
+              <span class="proj-num">03</span>
+              <div class="proj-text"><h3 class="proj-label">World Cup 26 <span>2026</span></h3><p class="proj-tag">48 teams, 104 matches, live scores and a 3D match ball.</p></div>
+              <svg class="proj-arrow" aria-hidden="true"><use href="#arrow"/></svg>
+            </div>
+            <ul class="proj-tools"><li>AI-built</li><li>3D</li><li>Vercel</li></ul>
+          </a>
+          <a class="proj-card" data-cat="web" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener">
+            <div class="proj-media"><img src="assets/img/aura-site.webp" alt="" loading="lazy"><span class="proj-chip">Web &amp; AI</span></div>
+            <div class="proj-meta">
+              <span class="proj-num">04</span>
+              <div class="proj-text"><h3 class="proj-label">Aura Coffee <span>2025</span></h3><p class="proj-tag">Solo-built coffee store with a quiz, 3-tier rewards and login.</p></div>
+              <svg class="proj-arrow" aria-hidden="true"><use href="#arrow"/></svg>
+            </div>
+            <ul class="proj-tools"><li>Antigravity</li><li>Firebase</li></ul>
+          </a>
+          <a class="proj-card" data-cat="web" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener">
+            <div class="proj-media"><img src="assets/img/civiclens.webp" alt="" loading="lazy"><span class="proj-chip">Web &amp; AI</span></div>
+            <div class="proj-meta">
+              <span class="proj-num">05</span>
+              <div class="proj-text"><h3 class="proj-label">CivicLens <span>2026</span></h3><p class="proj-tag">4 AI agents turn one photo into a formal civic complaint in ~15 sec.</p></div>
+              <svg class="proj-arrow" aria-hidden="true"><use href="#arrow"/></svg>
+            </div>
+            <ul class="proj-tools"><li>Make</li><li>Gemini</li><li>Gmail</li></ul>
+          </a>
+          <a class="proj-card is-drawn" data-cat="web" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener">
+            <div class="proj-media"><div class="cal" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="proj-chip">Web &amp; AI</span></div>
+            <div class="proj-meta">
+              <span class="proj-num">06</span>
+              <div class="proj-text"><h3 class="proj-label">DayFlow <span>2026</span></h3><p class="proj-tag">Day planner with reminders, calendar views and a real backend.</p></div>
+              <svg class="proj-arrow" aria-hidden="true"><use href="#arrow"/></svg>
+            </div>
+            <ul class="proj-tools"><li>Cursor</li><li>React Bits</li></ul>
+          </a>
+          <a class="proj-card is-drawn is-word" data-cat="brand" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener">
+            <div class="proj-media"><span class="word-croc" aria-hidden="true">Croc<br>It</span><span class="proj-chip">Brand &amp; strategy</span></div>
+            <div class="proj-meta">
+              <span class="proj-num">07</span>
+              <div class="proj-text"><h3 class="proj-label">CROC IT <span>2025</span></h3><p class="proj-tag">Crocs × Jutis idea for Diwali with a ₹1.25 Cr integrated media plan.</p></div>
+              <svg class="proj-arrow" aria-hidden="true"><use href="#arrow"/></svg>
+            </div>
+            <ul class="proj-tools"><li>Media planning</li></ul>
+          </a>
+          <a class="proj-card" data-cat="brand" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener">
+            <div class="proj-media"><img src="assets/img/gillette.webp" alt="" loading="lazy"><span class="proj-chip">Brand &amp; strategy</span></div>
+            <div class="proj-meta">
+              <span class="proj-num">08</span>
+              <div class="proj-text"><h3 class="proj-label">Gillette Rebrand <span>2025</span></h3><p class="proj-tag">Solo rebrand: G monogram, tagline, guidelines and campaign rollout.</p></div>
+              <svg class="proj-arrow" aria-hidden="true"><use href="#arrow"/></svg>
+            </div>
+            <ul class="proj-tools"><li>Brand identity</li></ul>
+          </a>
+          <a class="proj-card" data-cat="brand" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener">
+            <div class="proj-media"><img src="assets/img/soezi-social.webp" alt="" loading="lazy"><span class="proj-chip">Brand &amp; strategy</span></div>
+            <div class="proj-meta">
+              <span class="proj-num">09</span>
+              <div class="proj-text"><h3 class="proj-label">Soezi Social <span>2025</span></h3><p class="proj-tag">Zero-spend Diwali content strategy (hero, hub, hygiene) for a nail brand.</p></div>
+              <svg class="proj-arrow" aria-hidden="true"><use href="#arrow"/></svg>
+            </div>
+            <ul class="proj-tools"><li>Content strategy</li></ul>
+          </a>
+          <a class="proj-card" data-cat="brand" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener">
+            <div class="proj-media"><img src="assets/img/soezi-seo.webp" alt="" loading="lazy"><span class="proj-chip">Brand &amp; strategy</span></div>
+            <div class="proj-meta">
+              <span class="proj-num">10</span>
+              <div class="proj-text"><h3 class="proj-label">Soezi SEO <span>2025</span></h3><p class="proj-tag">SEO audit and 6-month plan for soezi.in, targeting DA 15 → 35+.</p></div>
+              <svg class="proj-arrow" aria-hidden="true"><use href="#arrow"/></svg>
+            </div>
+            <ul class="proj-tools"><li>Technical SEO</li></ul>
+          </a>
+          <a class="proj-card" data-cat="brand" href="#experience">
+            <div class="proj-media"><img src="assets/img/pluro-post.webp" alt="" loading="lazy"><span class="proj-chip">Brand &amp; strategy</span></div>
+            <div class="proj-meta">
+              <span class="proj-num">11</span>
+              <div class="proj-text"><h3 class="proj-label">Pluro Social <span>2026</span></h3><p class="proj-tag">Day-to-day social for a fertility care platform across 6 accounts.</p></div>
+              <svg class="proj-arrow" aria-hidden="true"><use href="#arrow"/></svg>
+            </div>
+            <ul class="proj-tools"><li>Social media</li><li>Dashboards</li></ul>
+          </a>
+          <a class="proj-card is-more" data-cat="brand" href="https://muhsingigani-portfolio.vercel.app" target="_blank" rel="noopener">
+            <span class="more-mark"><svg><use href="#mg"/></svg></span>
+            <span class="more-title">More case studies</span>
+            <span class="more-sub">Process, results and the builds behind each one</span>
+            <svg class="proj-arrow" aria-hidden="true"><use href="#arrow"/></svg>
+          </a>
         </div>
         <div class="projects-cta">
           <svg class="cta-mark"><use href="#mg"/></svg>
